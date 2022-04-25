@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
+<a href="{{ route('etudiant.create') }}" class="btn btn-primary btn-sm">Créer un étudiant</a>
 <div class="container-fluid ">
     <div class="row md-auto">
         <div class="col p-3">Nom</div>

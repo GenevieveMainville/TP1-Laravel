@@ -32,7 +32,8 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        return view('etudiant.create');
+        $villes = Ville::all();
+        return view('etudiants.create',['villes'=>$villes]);
     }
 
     /**
@@ -43,7 +44,19 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $nouvelEtudiant = Etudiant::create([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'ville_id' => intval($request->ville_id),
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'date_naissance' => $request->date_naissance,
+            'user_id' => 1
+        ]);
+
+        return redirect('etudiant/'.$nouvelEtudiant->id);
+        
     }
 
     /**
@@ -67,7 +80,11 @@ class EtudiantController extends Controller
      */
     public function edit(Etudiant $etudiant)
     {
-        //
+        $villes = Ville::all();
+        $ville_id = Ville::find($etudiant->ville_id);
+        return view('etudiants.edit', ['etudiant' => $etudiant,
+                                        'ville_id'=>$ville_id,
+                                        'villes'=>$villes]);
     }
 
     /**
@@ -79,7 +96,16 @@ class EtudiantController extends Controller
      */
     public function update(Request $request, Etudiant $etudiant)
     {
-        //
+        $etudiant->update([
+            'nom' => $request->nom,
+            'adresse' => $request->adresse,
+            'ville_id' => intval($request->ville_id),
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'date_naissance' => $request->date_naissance,
+            
+        ]);
+        return redirect(route('etudiant.show', $etudiant->id));
     }
 
     /**
@@ -90,6 +116,7 @@ class EtudiantController extends Controller
      */
     public function destroy(Etudiant $etudiant)
     {
-        //
+        $etudiant->delete();
+        return redirect(route('etudiant'));
     }
 }

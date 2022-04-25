@@ -19,5 +19,11 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('etudiant') }}" class="btn btn-outline-primary btn-sm">Modifier</a>  <a href="{{ route('etudiant') }}" class="btn btn-outline-primary btn-sm">Supprimer</a>
+    <a href="{{ route('etudiant.edit', $etudiant->id) }}" class="btn btn-outline-primary btn-sm">Modifier</a>  
+    <a href="{{ route('etudiant') }}" class="btn btn-outline-primary btn-sm">Supprimer</a>
+    <form method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger">Supprimer</button>
+        </form>
     @endsection
