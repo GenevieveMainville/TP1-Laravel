@@ -10,18 +10,29 @@
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet"/>
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
-   
 </head>
+
 <header>
-    <h1>Réseau étudiant du Collège de Maisonneuve</h1>
+    <nav class="nav navbar navbar-expand-lg navbar-dark bg-dark justify-content-between p-4">
+    
+        <a href="{{ route('etudiant') }}" class="navbar-brand text-white px-2 border">
+            <h3>Collège de Maisonneuve</h3>
+            <div >Réseau étudiant</div>
+        </a>
+        <div class="align-self-end">
+            <a href="{{ route('etudiant.create') }}" class="nav-link ">Créer un étudiant</a>
+        </div>
+    </nav>  
 </header>
-<body>
+
+<body >
     @yield('content')
 </body>
-<footer>
 
+<footer class="nav navbar navbar-expand-lg navbar-dark bg-dark justify-content-between p-4 text-white">
+    <div>Collège de Maisonneuve</div>
 </footer>
-<script src="{{asset('js/scripts.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
         @yield('script')
 
 </html>

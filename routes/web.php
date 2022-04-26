@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\EtudiantController;
 Route::get('/test-db', [TestController::class, "testConnection"]);
+
+Route::get('/', [EtudiantController::class, 'index']);
 Route::get('/etudiant', [EtudiantController::class, 'index'])->name('etudiant');
 Route::get('/etudiant/{etudiant}', [EtudiantController::class, 'show'])->name('etudiant.show');
 Route::get('/etudiant/create/etudiant', [EtudiantController::class, 'create'])->name('etudiant.create');
