@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 p-4">
-                <h1>Créer un nouvel étudiant</h1>
+                <h1 class="p-4">Créer un nouvel étudiant</h1>
                 <hr>
                 <form method="POST">
                     @csrf

@@ -11,17 +11,15 @@ class Etudiant extends Model
 
     
     public function etudiantVille()
-    {
-        
+    {     
         return $this->belongsTo(Ville::class);
-       
     }
     
   
     protected $fillable = [
         'nom',
         'adresse',
-        'ville_id',
+        'villes_id',
         'phone',
         'email',
         'date_naissance',

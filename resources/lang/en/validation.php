@@ -33,9 +33,9 @@ return [
     'boolean' => 'The :attribute field must be true or false.',
     'confirmed' => 'The :attribute confirmation does not match.',
     'current_password' => 'The password is incorrect.',
-    'date' => 'The :attribute is not a valid date.',
+    'date' => 'The date is not a valid date.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
-    'date_format' => 'The :attribute does not match the format :format.',
+    'date_format' => 'The date does not match the format :format.',
     'declined' => 'The :attribute must be declined.',
     'declined_if' => 'The :attribute must be declined when :other is :value.',
     'different' => 'The :attribute and :other must be different.',
@@ -93,7 +93,7 @@ return [
     'min' => [
         'numeric' => 'The :attribute must be at least :min.',
         'file' => 'The :attribute must be at least :min kilobytes.',
-        'string' => 'The :attribute must be at least :min characters.',
+        'string' => 'The field must be at least :min characters.',
         'array' => 'The :attribute must have at least :min items.',
     ],
     'multiple_of' => 'The :attribute must be a multiple of :value.',
@@ -158,6 +158,7 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' =>['titre_en'=>'english title', 'titre_fr'=>'french title', 'contenu_en'=>'english text', 'contenu_fr'=>'french text', 
+                    'date_naissance'=>'Date of birth', 'doc'=>'document','titre'=>'title', 'langue'=>'language','phone'=>'phone', 'name'=>'name'],
 
 ];

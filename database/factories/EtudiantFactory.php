@@ -29,7 +29,7 @@ class EtudiantFactory extends Factory
             'phone'=> $this->faker->phoneNumber(),
             'email'=> $this->faker->email(),
             'date_naissance'=> $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'ville_id' => $this->faker->numberBetween(1,15)
+            'villes_id' => Ville::all()->random()->id
         ];
     }
 }

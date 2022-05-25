@@ -20,8 +20,8 @@ class CreateEtudiantsTable extends Migration
             $table->string('phone',25);
             $table->string('email',255);
             $table->date('date_naissance');
-            $table->integer('ville_id')->unsigned();
-            $table->foreign('ville_id')->references('id')->on('villes')->onDelete('cascade');
+            $table->integer('villes_id')->unsigned();
+            $table->foreign('villes_id')->references('id')->on('villes')->onDelete('cascade');
             $table->timestamps();
         });
     }
