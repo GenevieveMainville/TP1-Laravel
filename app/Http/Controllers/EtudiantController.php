@@ -92,7 +92,7 @@ class EtudiantController extends Controller
         $villes = Ville::all();
         $ville_id = Ville::find($etudiant->villes_id);
         $user = User::find($etudiant->id);
-
+        
         return view('etudiants.edit', ['etudiant' => $etudiant,
                                         'ville_id'=>$ville_id,
                                         'user'=>$user,
